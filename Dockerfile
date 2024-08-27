@@ -1,14 +1,14 @@
-# Gunakan image dasar yang minimal
+# Gunakan image dasar berbasis Linux
 FROM alpine:3.18
 
-# Menambahkan informasi tentang pemelihara image
-LABEL maintainer="PUJA"
+# Install bash
+RUN apk add --no-cache bash
 
-# Salin script projek.sh ke dalam container
+# Copy script ke dalam container
 COPY project.sh /usr/local/bin/project.sh
 
-# Pastikan projek.sh dapat dieksekusi
+# Atur permission untuk script
 RUN chmod +x /usr/local/bin/project.sh
 
-# Tentukan perintah yang akan dijalankan saat container dijalankan
+# Tentukan command untuk menjalankan script
 CMD ["/usr/local/bin/project.sh"]
