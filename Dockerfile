@@ -5,10 +5,10 @@ FROM alpine:3.18
 LABEL maintainer="PUJA"
 
 # Salin script projek.sh ke dalam container
-COPY projek.sh /usr/local/bin/projek.sh
+COPY project.sh /usr/local/bin/project.sh
 
 # Pastikan projek.sh dapat dieksekusi
-RUN chmod +x /usr/local/bin/projek.sh
+RUN chmod +x /usr/local/bin/project.sh
 
 # Tentukan perintah yang akan dijalankan saat container dijalankan
-CMD ["/usr/local/bin/projek.sh"]
+CMD ["/usr/local/bin/project.sh"]
